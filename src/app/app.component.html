@@ -2,11 +2,11 @@
   @if (isHandset$ | async) {
     <button
       type="button"
-      aria-label="Toggle drawer"
+      aria-label="Toggle sidenav"
       mat-icon-button
-      (click)="drawer.toggle()"
+      (click)="sidenav.toggle()"
     >
-      <mat-icon aria-label="Drawer toggle icon">menu</mat-icon>
+      <mat-icon aria-label="sidenav toggle icon">menu</mat-icon>
     </button>
   }
   <span>Mat-Toolbar</span>
@@ -18,11 +18,9 @@
     <a mat-button href="#">Link 3</a>
   }
 </mat-toolbar>
-<mat-sidenav-container class="drawer-container">
+<mat-sidenav-container>
   <mat-sidenav
-    #drawer
-    id="drawer"
-    class="drawer"
+    #sidenav
     fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
 		[ngClass]="{hidden: !(isHandset$ | async)}"
@@ -38,7 +36,7 @@
   <mat-sidenav-content>
     <!-- Add Content Here -->
 		<main>
-      <h1>The sidenav component is designed to add side content to a small section of your app.</h1>
+      <h1>The sidenav components are designed to add side content to a fullscreen app.</h1>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
